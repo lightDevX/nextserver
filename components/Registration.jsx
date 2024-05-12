@@ -1,10 +1,24 @@
+import connectMongo from "@/dbConnect/connectMongo";
+import User from "@/models/Users";
 
 const Registration = () => {
 
     const addUsers = async (formData) => {
         "use server";
-        console.log(formData.get('name'));
-        console.log(formData.get('email'));
+
+        const name = formData.get('name');
+        const email = formData.get('email');
+
+        const userData = {
+            name,
+            email,
+        }
+
+        await connectMongo();
+
+        // Inster into Database
+
+        await new User(userData).save();
     }
 
     return (
