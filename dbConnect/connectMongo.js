@@ -25,4 +25,4 @@ async function connectMongo() {
     }
     return cached.connection
 }
-export default connectMongo
+export default connectMongo;
