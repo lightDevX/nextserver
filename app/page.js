@@ -1,11 +1,12 @@
-import Registration from "@/components/Registration";
-import Userlist from "@/components/Userlist";
+import NewUserForm from "./components/users/NewUserForm";
+import UserList from "./components/users/UserList";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Registration />
-      <Userlist />
-    </main>
-  );
+export default async function Home() {
+    return (
+        <div>
+            <h1 className="text-gray-800">USER REGISTRATION</h1>
+            <NewUserForm />
+            <UserList />
+        </div>
+    );
 }
